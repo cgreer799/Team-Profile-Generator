@@ -169,8 +169,9 @@ function createIntern () {
 
 function writeHTML() {
     console.log(employeesArray);
-    fs.writeFileSync('./dist/index.html', template.generateTemplate(employeesArray))
     console.log('Generating Team Profile HTML...');
+    fs.writeFileSync('./dist/index.html', template.generateTemplate(employeesArray))
+    console.log('Team Profile HTML created.');
     
 }
 

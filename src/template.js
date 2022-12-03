@@ -4,29 +4,70 @@ let engineerCard = "";
 
 
 function generateManagerCard(data) {
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].getRole() === 'Manager') {
-    managerCard = `<div class="card" id="manager-card">
-      <div class="card-header">
-        <p>${data[i].name}</p>
-        <p>Manager</p>
-      </div>
-      <div class="card-body">
-        <p class="card-text" id="id">ID: ${data[i].id}</p>
-        <p class="card-text" id="email">Email: <a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
-        <p class="card-text" id="office-number">Office Number: ${data[i].officeNumber}</p>
-      </div>
-    </div>
-    `}
-  }
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].getRole() === 'Manager') {
+        newManagerCard = `<div class="card" id="manager-card">
+            <div class="card-header">
+                <p>${data[i].name}</p>
+                <p>Manager</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text" id="id">ID: ${data[i].id}</p>
+                <p class="card-text" id="email">Email: <a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
+                <p class="card-text" id="office-number">Office Number: ${data[i].officeNumber}</p>
+            </div>
+        </div>
+        `
+        managerCard = managerCard + newManagerCard
+        }
+    }
+}
+
+function generateEngineerCard(data) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].getRole() === 'Engineer') {
+        newEngineerCard = `<div class="card" id="engineer-card">
+            <div class="card-header">
+                <p>${data[i].name}</p>
+                <p>Engineer</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text" id="id">ID: ${data[i].id}</p>
+                <p class="card-text" id="email">Email: <a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
+                <p class="card-text" id="github">GitHub:<a href='https://github.com/${data[i].github}'  class="website-url"> ${data[i].github}</a></p>
+            </div>
+        </div>
+        `
+        engineerCard = engineerCard + newEngineerCard
+        }
+    }
+}
+
+function generateInternCard(data) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].getRole() === 'Intern') {
+        newInternCard = `<div class="card" id="intern-card">
+            <div class="card-header">
+                <p>${data[i].name}</p>
+                <p>Intern</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text" id="id">ID: ${data[i].id}</p>
+                <p class="card-text" id="email">Email: <a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
+                <p class="card-text" id="school">School: ${data[i].school}</p>
+            </div>
+        </div>
+        `
+        internCard = internCard + newInternCard;
+        }
+    }
 }
 
 function generateTemplate(data) {
 
-    generateManagerCard(data);
-    //future functions to generate the html for engineer and intern
-    //generateEngineerCard(data);
-    //generateInternCard(data);
+    generateManagerCard(data);//functions to generate the html for the manager, engineer, and intern
+    generateEngineerCard(data);
+    generateInternCard(data);
 
     const start = `<!DOCTYPE html>
       <html lang="en">
