@@ -3,7 +3,7 @@ const jest = require('jest');
 const fs = require('fs');
 const path = require('path');
 
-
+const template = require('./src/template.js');
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -169,7 +169,9 @@ function createIntern () {
 
 function writeHTML() {
     console.log(employeesArray);
-    fs.writeFile('./dist/index.html')
+    fs.writeFileSync('./dist/index.html', template.generateTemplate(employeesArray))
+    console.log('Generating Team Profile HTML...');
+    
 }
 
 createManager();

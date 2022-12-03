@@ -1,0 +1,68 @@
+let managerCard = "";
+let internCard = "";
+let engineerCard = "";
+
+
+function generateManagerCard(data) {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].getRole() === 'Manager') {
+    managerCard = `<div class="card" id="manager-card">
+      <div class="card-header">
+        <p>${data[i].name}</p>
+        <p>Manager</p>
+      </div>
+      <div class="card-body">
+        <p class="card-text" id="id">ID: ${data[i].id}</p>
+        <p class="card-text" id="email">Email: <a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
+        <p class="card-text" id="office-number">Office Number: ${data[i].officeNumber}</p>
+      </div>
+    </div>
+    `}
+  }
+}
+
+function generateTemplate(data) {
+
+    generateManagerCard(data);
+    //future functions to generate the html for engineer and intern
+    //generateEngineerCard(data);
+    //generateInternCard(data);
+
+    const start = `<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          />
+          <link rel="stylesheet" href="./style.css" />
+          <title>Team Profile</title>
+        </head>
+        <body>
+          <div class="container-fluid d-flex justify-content-center header mb-2">
+            <div class="row mt-3 mb-2">
+              <h1>My Team</h1>
+            </div>
+          </div>
+          <main class="row d-flex justify-content-center">
+          `;
+
+    const end = `</main>
+          <script
+            src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+          ></script>
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+          ></script>
+        </body>
+      </html>`;
+
+    const template = start + managerCard + end;
+
+    return template;
+  }
+  
+  module.exports = { generateTemplate };
