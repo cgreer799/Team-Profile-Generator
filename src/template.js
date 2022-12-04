@@ -1,3 +1,5 @@
+const Engineer = require("../lib/Engineer");
+
 let managerCard = "";
 let internCard = "";
 let engineerCard = "";
@@ -101,7 +103,7 @@ function generateTemplate(data) {
         </body>
       </html>`;
 
-    const template = start + managerCard + end;
+    const template = start + managerCard + engineerCard + internCard + end;
 
     return template;
   }

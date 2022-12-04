@@ -2,9 +2,16 @@
     font:bold;
     font-size: 24px;
     color: #eeeeee;
-    background: #0077F7;
 }
-
+#manager-card .card-header {
+    background-color: #0077F7;
+}
+#engineer-card .card-header {
+    background-color: #5425d4;
+}
+#intern-card .card-header {
+    background-color: #4eb3e2;
+}
 .card-body {
     background-color: #d1cfcf;
 }
