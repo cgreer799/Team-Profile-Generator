@@ -32,6 +32,6 @@ THEN I exit the application, and the HTML is generated
 
 ## Links
 
-Video Link: https://drive.google.com/file/d/1H5BkUPCFhzdTB5nad1BPfEufMzJBww6W/view
+Video Link: https://drive.google.com/file/d/14-4CGQlVtGoGhKMurxMcuLEXrHr6LIe7/view
 
 Repository link: https://github.com/cgreer799/Team-Profile-Generator
